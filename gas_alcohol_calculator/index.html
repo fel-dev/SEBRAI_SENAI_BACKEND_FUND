@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gas/Alcohol Calculator</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f1f1f1;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 300px;
+      height: 300px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    label {
+      margin-top: 20px;
+    }
+
+    input {
+      margin-top: 5px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    input[type=submit] {
+      margin-top: 20px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #00b894;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .res {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Gas/Alcohol Calculator</h1>
+  <form action="index.php" method="POST">
+    <label for="gas">Gas Price</label>
+    <input type="number" name="gas" id="gas" step="0.01" min="0" required>
+    <label for="alcohol">Alcohol Price</label>
+    <input type="number" name="alcohol" id="alcohol" step="0.01" min="0" required>
+    <label for="gasoline">Gasoline Price</label>
+    <input type="number" name="gasoline" id="gasoline" step="0.01" min="0" required>
+    <input type="submit" value="Calculate">
+  </form>
+  <div class="res">-</div>
+</body>
+<script>
+  const form = document.querySelector('form');
+  let res = document.querySelector('.res');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const gas = document.querySelector('#gas').value;
+    const alcohol = document.querySelector('#alcohol').value;
+    const gasoline = document.querySelector('#gasoline').value;
+    const result = (alcohol / gasoline) / (gas / 100);
+    if (result > 0.7) {
+      res.innerHTML = 'Better use Gas';
+    } else {
+      res.innerHTML = 'Better use Alcohol';
+    }
+  });
+</script>
+</html>

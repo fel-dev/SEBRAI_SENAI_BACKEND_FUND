@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Calculadora</title>
+  <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="./ativos/css/style.css" />
+</head>
+
+<body>
+  <div class="conteudo">
+    <div class="formulario">
+      <form method="" action="">
+        <div>
+          <h2 class="cabecalho">Calculadora</h2>
+        </div>
+        <div class="campo">
+          <label>Resultado:</label>
+          <span class="resultado" id="txtResultado">- - -</span>
+        </div>
+        <div class="campo">
+          <label>Valor 1:</label>
+          <input type="number" id="txtValor1">
+        </div>
+        <div class="campo">
+          <label>Valor 2:</label>
+          <input type="number" id="txtValor2">
+        </div>
+        <div class="ops_and_btn">
+          <div class="campo">
+            <label>Operação:</label>
+            <select name="cbxOperacao" id="cbxOperacao">
+              <option value="+">Adição</option>
+              <option value="-">Subtração</option>
+              <option value="/">Divisão</option>
+              <option value="*">Multiplicação</option>
+            </select>
+          </div>
+          <div class="botao">
+            <button type="button" id="bt_calcula">Calcular</button>
+          </div>
+        </div>
+      </form>
+    </div>
+</body>
+<script src="./ativos/script/calculator.js"></script>
+</html>
